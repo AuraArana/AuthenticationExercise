@@ -1,5 +1,5 @@
 import React from "react";
-// import { signOut } from "../component/signOut";
+import { signOut } from "../utilities/signOut";
 import { useHistory } from "react-router-dom";
 
 export const Dashboard = () => {
@@ -7,7 +7,17 @@ export const Dashboard = () => {
 	return (
 		<>
 			<h1>LogedIn</h1>
-			<button>LogOut</button>
+			<button
+				onCLick={() => {
+					try {
+						signOut();
+						history.push("/");
+					} catch (e) {
+						alert(e.message);
+					}
+				}}>
+				LogOut
+			</button>
 		</>
 	);
 };

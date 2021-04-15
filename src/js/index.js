@@ -28,6 +28,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+firebase.auth();
 
 //render your react application
 ReactDOM.render(<Layout />, document.querySelector("#app"));
